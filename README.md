@@ -1,7 +1,8 @@
 # Deps
 * nvim
-* nodejs
 * ripgrep
+* nodejs
+* python3
 * vim-plug - installed to `~/.config/nvim/autoload/plug.vim`
 * pynvim - `python3 -m pip install --user --upgrade pynvim`
 
