@@ -4,13 +4,14 @@
 * nodejs
 * python3
 * vim-plug
-* pynvim - `python3 -m pip install --user --upgrade pynvim`
+* pynvim
 * tmux
 
 # Installation
-* install vim-plug to `~/.config/nvim/autoload/plug.vim`
-* replace `~/.config/nvim/init.vim`
-* Run `:PlusInstall`
+1. Install pynvim - `python3 -m pip install --user --upgrade pynvim`
+2. Install vim-plug to `~/.config/nvim/autoload/plug.vim`
+3. Replace `~/.config/nvim/init.vim`
+4. Run `:PlusInstall`
 
 # To Do
 * Create install script
