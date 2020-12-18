@@ -3,11 +3,12 @@
 * ripgrep
 * nodejs
 * python3
-* vim-plug - installed to `~/.config/nvim/autoload/plug.vim`
+* vim-plug
 * pynvim - `python3 -m pip install --user --upgrade pynvim`
 * tmux
 
 # Installation
+* install vim-plug to `~/.config/nvim/autoload/plug.vim`
 * replace `~/.config/nvim/init.vim`
 * Run `:PlusInstall`
 
