@@ -1,11 +1,12 @@
 # Deps
-* nvim
 * ripgrep
-* nodejs
-* python3
-* vim-plug
-* pynvim
 * tmux
+* nodejs
+    * neovim 
+* python3
+    * pynvim
+* nvim
+    * vim-plug
 
 # Installation
 1. Install pynvim - `python3 -m pip install --user --upgrade pynvim`
