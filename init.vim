@@ -214,6 +214,7 @@ call plug#begin('~/.vim/plugged')
 " }}}
 
 " General Functionality {{{
+    Plug 'christoomey/vim-tmux-navigator'
     " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
     Plug 'tpope/vim-surround'
 
