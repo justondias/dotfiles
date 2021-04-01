@@ -22,7 +22,7 @@
 2. install ohmyzsh - `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` 
 3. install zsh-autosuggestions - `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 4. install zsh-syntax-highlighting - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
-5. In ~/.zshrc - `plugins=(git␣zsh-autosuggestions␣zsh-syntax-highlighting)`
+5. In ~/.zshrc - `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`
 
 # To Do
 * Create install script
