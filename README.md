@@ -15,7 +15,7 @@
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 4. Replace `~/.config/nvim/init.vim`
 5. Run `:PlusInstall`
-6. RUN `:CocInstall coc-json coc-tsserver`
+6. RUN `:CocInstall coc-json coc-tsserver coc-pairs`
 
 # zsh
 1. `brew install zsh`
