@@ -1,5 +1,5 @@
 # Deps
-* ripgrep
+* ripgrep - `alias rgf='rg --files | rg'`
 * tmux
 * nodejs
     * neovim 
