@@ -19,6 +19,14 @@
   become_user: j
   become_method: sudo
 
+- name: Set permissions for .oh-my-zsh
+  become: yes
+  file:
+    path: '/home/j/.oh-my-zsh'
+    owner: "{{ user.username }}"
+    group: "{{ user.username }}"
+    mode: '0750'
+
 - name: Check for .zshrc
   stat: path="~/.zshrc"
   register: zshrc_stat
