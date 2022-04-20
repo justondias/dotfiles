@@ -17,6 +17,7 @@
   when: not oh_my_zsh_stat.stat.exists
   become: true
   become_user: j
+  become_method: sudo
 
 - name: Check for .zshrc
   stat: path="~/.zshrc"
