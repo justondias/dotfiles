@@ -43,5 +43,5 @@
 - name: change user shell to zsh
   become: yes
   user:
-    name: "{{ the_user }}"
+    name: j
     shell: /bin/zsh
