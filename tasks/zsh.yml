@@ -1,7 +1,7 @@
 - name: Install zsh
   apt: name=zsh state=present
   become: yes
-  become_user: root
+  become_user: j
   become_method: sudo
 
 - name: Check for oh-my-zsh installation
@@ -15,20 +15,27 @@
 - name: Check for .zshrc
   stat: path="~/.zshrc"
   register: zshrc_stat
+  become_user: j
+  become: true
 
 - name: Back up .zshrc
   command: mv ~/.zshrc ~/.zshrc.bak
   args:
     creates: "~/.zshrc.bak"
   when: zshrc_stat.stat.exists
+  become_user: j
+  become: true
 
 - name: Remove .zshrc
   command: rm ~/.zshrc
   when: zshrc_stat.stat.exists
-
+  become_user: j
+  become: true
 
 - name: Symlink .zshrc
   file:
     src: "~/.dotfiles/files/init.vim"
     dest: "~/.zshrc"
     state: link
+  become_user: j
+  become: true
