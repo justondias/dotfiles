@@ -19,7 +19,7 @@
 - name: Back up .zshrc
   command: mv ~/.zshrc ~/.zshrc.bak
   args:
-    creates: "~/.dotfiles/files/.zshrc.bak"
+    creates: "~/.zshrc.bak"
   when: zshrc_stat.stat.exists
 
 - name: Remove .zshrc
