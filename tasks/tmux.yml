@@ -6,6 +6,6 @@
 
 - name: Symlink .tmux.conf
   file:
-    src: "~/.dotfiles/files/tmux.conf"
+    src: "~/.dotfiles/files/.tmux.conf"
     dest: "~/.tmux.conf"
     state: link
