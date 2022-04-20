@@ -34,7 +34,7 @@
 
 - name: Symlink .zshrc
   file:
-    src: "~/.dotfiles/files/init.vim"
+    src: "~/.dotfiles/files/.zshrc"
     dest: "~/.zshrc"
     state: link
   become_user: j
