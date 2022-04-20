@@ -11,7 +11,7 @@
 - name: Install Oh-My-zsh
   git:
     repo: "https://github.com/robbyrussell/oh-my-zsh"
-    dest: "~/.oh-my-zsh"
+    dest: "/home/j/.oh-my-zsh"
     version: master
     update: no
   when: not oh_my_zsh_stat.stat.exists
