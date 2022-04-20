@@ -2,7 +2,6 @@
   apt:
     name:
       - htop
-      - tmux
       - git
       - neovim
       - python3
