@@ -13,7 +13,7 @@
 
 - name: Install node and set version
   shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install --lts"
+    /bin/zsh -c "source ~/.nvm/nvm.sh && nvm install --lts"
   when: not nvm_install.stat.exists
   become: yes
   become_user: j

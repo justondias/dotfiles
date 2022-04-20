@@ -9,7 +9,8 @@
     - include: tasks/packages.yml
     - include: tasks/users.yml
     - include: tasks/cron.yml
-    - include: tasks/tmux.yml
     - include: tasks/zsh.yml
+    - include: tasks/tmux.yml
+    - include: tasks/nvm.yml
 
 
