@@ -19,12 +19,6 @@
   become_user: j
   become_method: sudo
 
-- name: unset $ZSH
-  command: unset $ZSH
-  when: not oh_my_zsh_stat.stat.exists
-  become_user: j
-  become: true
-
 - name: Install .oh-my-zsh
   command: /home/j/.oh-my-zsh/tools/install.sh
   when: not oh_my_zsh_stat.stat.exists
