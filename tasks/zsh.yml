@@ -40,8 +40,8 @@
   become_user: j
   become: true
 
-- name: Set default shell
-  command: /bin/bash -c "chsh -s $(which zsh)"
-  become_user: j
-  become: true
-
+- name: change user shell to zsh
+  become: yes
+  user:
+    name: "{{ the_user }}"
+    shell: /bin/zsh
