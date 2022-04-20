@@ -3,3 +3,8 @@
   with_items:
     - htop
     - tmux
+    - git
+    - neovim
+    - python3
+    - nvm
+    - ripgrep
