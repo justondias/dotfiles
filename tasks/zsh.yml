@@ -13,7 +13,7 @@
   when: not oh_my_zsh_stat.stat.exists
 
 - name: Check for .zshrc
-  stat: path="{{dotfiles_user_home}}/.zshrc"
+  stat: path="~/.zshrc"
   register: zshrc_stat
 
 - name: Back up .zshrc
