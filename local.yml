@@ -13,4 +13,5 @@
     - include: tasks/tmux.yml
     - include: tasks/nvm.yml
 
+# ansible-pull -U git@github.com:justondias/dotfiles.git
 
