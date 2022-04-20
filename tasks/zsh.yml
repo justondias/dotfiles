@@ -11,7 +11,7 @@
 - name: Clone Oh-My-zsh
   git:
     repo: "https://github.com/robbyrussell/oh-my-zsh"
-    dest: "/home/j/.oh-my-zsh"
+    dest: "/home/j/.oh-my-zsh-inst"
     version: master
     update: no
   when: not oh_my_zsh_stat.stat.exists
@@ -20,7 +20,7 @@
   become_method: sudo
 
 - name: Install .oh-my-zsh
-  command: /home/j/.oh-my-zsh/tools/install.sh
+  command: /home/j/.oh-my-zsh-inst/tools/install.sh
   when: not oh_my_zsh_stat.stat.exists
   become_user: j
   become: true
