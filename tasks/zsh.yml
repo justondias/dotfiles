@@ -24,7 +24,6 @@
   when: oh_my_zsh_stat.stat.exists
   become_user: j
   become: true
-  become_method: sudo
 
 - name: Add autosuggestions
   git:
