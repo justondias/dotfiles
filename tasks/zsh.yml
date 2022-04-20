@@ -45,6 +45,7 @@
   register: zsh_path
 
 - name: Switch to zsh
-  user: j
-  shell: /usr/bin/zsh
+  user:
+    name: j
+    shell: {{ zsh_path.stdout }}
 
