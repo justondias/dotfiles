@@ -45,8 +45,6 @@
   register: zsh_path
 
 - name: Switch to zsh
-  command: chsh j -s {{ zsh_path.stdout }}
-  become: yes
-  become_method: su
-  become_user: j
+  user: j
+  shell: /usr/bin/zsh
 
