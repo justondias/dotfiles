@@ -23,8 +23,8 @@
   become: yes
   file:
     path: '/home/j/.oh-my-zsh'
-    owner: "{{ user.username }}"
-    group: "{{ user.username }}"
+    owner: "j"
+    group: "j"
     mode: '0750'
 
 - name: Check for .zshrc
