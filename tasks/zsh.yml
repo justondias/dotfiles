@@ -40,7 +40,11 @@
   become_user: j
   become: true
 
-- name: Set zsh as default shell
-  user: name=j shell=/usr/bin/zsh
+- name: Get zsh path
+  command: which zsh
+  register: zsh_path
+
+- name: Switch to zsh
+  user: name=j shell={{ zsh_path.stdout }}
   sudo: yes
 
