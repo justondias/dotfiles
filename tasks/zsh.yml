@@ -8,7 +8,7 @@
   stat: "path=/home/j/.oh-my-zsh"
   register: oh_my_zsh_stat
 
-- name: Install Oh-My-zsh
+- name: Clone Oh-My-zsh
   git:
     repo: "https://github.com/robbyrussell/oh-my-zsh"
     dest: "/home/j/.oh-my-zsh"
