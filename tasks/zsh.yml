@@ -41,7 +41,7 @@
   become: true
 
 - name: Set default shell
-  command: chsh -s $(which zsh)
+  command: /bin/bash -c "chsh -s $(which zsh)"
   become_user: j
   become: true
 
