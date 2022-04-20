@@ -5,7 +5,7 @@
   become_method: sudo
 
 - name: Check for oh-my-zsh installation
-  stat: "path=~/.oh-my-zsh"
+  stat: "path=/home/j/.oh-my-zsh"
   register: oh_my_zsh_stat
 
 - name: Install Oh-My-zsh
