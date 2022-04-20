@@ -40,8 +40,7 @@
   become_user: j
   become: true
 
-- name: change user shell to zsh
-  become: yes
-  user:
-    name: j
-    shell: /bin/zsh
+- name: Set zsh as default shell
+  user: name=j shell=/usr/bin/zsh
+  sudo: yes
+
