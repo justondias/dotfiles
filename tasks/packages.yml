@@ -6,7 +6,6 @@
       - git
       - neovim
       - python3
-      - nvm
       - ripgrep
     state: present
     autoclean: yes
