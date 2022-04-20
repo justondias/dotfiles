@@ -12,9 +12,8 @@
   shell: >
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) | sh
   when: not oh_my_zsh_stat.stat.exists
-  become: true
+  become: yes
   become_user: j
-  become_method: sudo
 
 - name: Check for .zshrc
   stat: path="~/.zshrc"
