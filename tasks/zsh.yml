@@ -21,7 +21,7 @@
 
 - name: Install .oh-my-zsh
   command: /home/j/.oh-my-zsh/tools/install.sh
-  when: zshrc_stat.stat.exists
+  when: not zshrc_stat.stat.exists
   become_user: j
   become: true
 
