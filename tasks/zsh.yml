@@ -19,13 +19,11 @@
   become_user: j
   become_method: sudo
 
-- name: Set permissions for .oh-my-zsh
-  become: yes
-  file:
-    path: '/home/j/.oh-my-zsh'
-    owner: "j"
-    group: "j"
-    mode: '0750'
+- name: Install .oh-my-zsh
+  command: /home/j/.oh-my-zsh/tools/install.sh
+  when: zshrc_stat.stat.exists
+  become_user: j
+  become: true
 
 - name: Check for .zshrc
   stat: path="~/.zshrc"
