@@ -48,11 +48,11 @@
   become_user: j
   become: true
 
-- name: Remove .zshrc
-  command: rm ~/.zshrc
-  when: zshrc_stat.stat.exists
-  become_user: j
-  become: true
+#- name: Remove .zshrc
+  #command: rm ~/.zshrc
+  #when: zshrc_stat.stat.exists
+  #become_user: j
+  #become: true
 
 - name: Symlink .zshrc
   file:
