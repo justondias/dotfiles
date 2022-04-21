@@ -8,12 +8,11 @@
   stat: "path=/home/j/.oh-my-zsh"
   register: oh_my_zsh_stat
 
-- name: Clone Oh-My-zsh
-  command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git /home/j/.oh-my-zsh'
-  when: not oh_my_zsh_stat.stat.exists
-  become: true
-  become_user: j
-  become_method: sudo
+- name: Install oh my zsh
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    depth: 1
 
 - name: Add autosuggestions
   git:
@@ -56,12 +55,10 @@
   become: true
 
 - name: Symlink .zshrc
-  file:
+  copy:
     src: "~/.dotfiles/files/.zshrc"
     dest: "~/.zshrc"
-    state: link
-  become_user: j
-  become: true
+    mode: 0644
 
 - name: Get zsh path
   command: which zsh
