@@ -58,6 +58,7 @@
     state: link
   become_user: j
   become: true
+  become_method: sudo
 
 - name: Get zsh path
   command: which zsh
