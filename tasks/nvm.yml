@@ -1,6 +1,6 @@
 
 - name: Check for nvm installation
-  stat: "path=~/.nvm"
+  stat: "path=/home/j/.nvm"
   register: nvm_install
 
 - name: Install nvm
