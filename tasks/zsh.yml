@@ -22,7 +22,7 @@
     dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     version: master
     update: no
-  become: true
+  become: yes
   become_user: j
 
 - name: Add zsh-syntax-highlighting
@@ -31,30 +31,30 @@
     dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     version: master
     update: no
-  become: true
+  become: yes
   become_user: j
 
-- name: Check for .zshrc
-  stat: path="~/.zshrc"
-  register: zshrc_stat
-  become_user: j
-  become: true
+#- name: Check for .zshrc
+  #stat: path="~/.zshrc"
+  #register: zshrc_stat
+  #become_user: j
+  #become: true
 
-- name: Back up .zshrc
-  command: mv ~/.zshrc ~/.zshrc.bak
-  args:
-    creates: "~/.zshrc.bak"
-  when: zshrc_stat.stat.exists
-  become_user: j
-  become: true
+#- name: Back up .zshrc
+  #command: mv ~/.zshrc ~/.zshrc.bak
+  #args:
+    #creates: "~/.zshrc.bak"
+  #when: zshrc_stat.stat.exists
+  #become_user: j
+  #become: true
 
-- name: Symlink .zshrc
-  file:
-    src: "~/.dotfiles/files/.zshrc"
-    dest: "~/.zshrc"
-    state: link
-  become_user: j
-  become: true
+#- name: Symlink .zshrc
+  #file:
+    #src: "~/.dotfiles/files/.zshrc"
+    #dest: "~/.zshrc"
+    #state: link
+  #become_user: j
+  #become: true
 
 - name: Get zsh path
   command: which zsh
