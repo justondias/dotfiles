@@ -10,7 +10,7 @@
 
 - name: Install oh my zsh
   shell: >
-    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh && zsh install.sh
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh
     creates=/home/j/.oh-my-zsh
   when: not oh_my_zsh_stat.stat.exists
   become: yes
@@ -47,12 +47,6 @@
   when: zshrc_stat.stat.exists
   become_user: j
   become: true
-
-#- name: Remove .zshrc
-  #command: rm ~/.zshrc
-  #when: zshrc_stat.stat.exists
-  #become_user: j
-  #become: true
 
 - name: Symlink .zshrc
   file:
