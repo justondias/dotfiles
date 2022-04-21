@@ -10,7 +10,7 @@
 
 - name: Install oh my zsh
   shell: >
-    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh && zsh install.sh
     creates=/home/j/.oh-my-zsh
   when: not oh_my_zsh_stat.stat.exists
   become: yes
