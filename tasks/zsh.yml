@@ -12,7 +12,7 @@
   shell: >
     wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh && sh install.sh
     creates=/home/j/.oh-my-zsh
-  when: not nvm_install.stat.exists
+  when: not oh_my_zsh_stat.stat.exists
   become: yes
   become_user: j
 
