@@ -9,32 +9,31 @@
   register: oh_my_zsh_stat
 
 - name: Clone Oh-My-zsh
-    # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
-  command: git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git /home/j/.oh-my-zsh
+  command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh'
   when: not oh_my_zsh_stat.stat.exists
   become: true
   become_user: j
   become_method: sudo
 
-#- name: Add autosuggestions
-  #git:
-    #repo: "https://github.com/zsh-users/zsh-autosuggestions"
-    #dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-    #version: master
-    #update: no
-  #become: true
-  #become_user: j
-  #become_method: sudo
+- name: Add autosuggestions
+  git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    version: master
+    update: no
+  become: true
+  become_user: j
+  become_method: sudo
 
-#- name: Add zsh-syntax-highlighting
-  #git:
-    #repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    #dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-    #version: master
-    #update: no
-  #become: true
-  #become_user: j
-  #become_method: sudo
+- name: Add zsh-syntax-highlighting
+  git:
+    repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    version: master
+    update: no
+  become: true
+  become_user: j
+  become_method: sudo
 
 - name: Check for .zshrc
   stat: path="~/.zshrc"
@@ -46,6 +45,12 @@
   command: mv ~/.zshrc ~/.zshrc.bak
   args:
     creates: "~/.zshrc.bak"
+  when: zshrc_stat.stat.exists
+  become_user: j
+  become: true
+
+- name: Remove .zshrc
+  command: rm ~/.zshrc
   when: zshrc_stat.stat.exists
   become_user: j
   become: true
