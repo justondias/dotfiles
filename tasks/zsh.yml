@@ -11,7 +11,7 @@
 - name: Install oh my zsh
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
-    dest: ~/.oh-my-zsh
+    dest: /home/j/.oh-my-zsh
     depth: 1
 
 - name: Add autosuggestions
@@ -55,10 +55,12 @@
   become: true
 
 - name: Symlink .zshrc
-  copy:
+  file:
     src: "~/.dotfiles/files/.zshrc"
     dest: "~/.zshrc"
-    mode: 0644
+    state: link
+  become_user: j
+  become: true
 
 - name: Get zsh path
   command: which zsh
