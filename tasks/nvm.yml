@@ -1,6 +1,7 @@
 
 - name: Check for nvm installation
   stat: "path=/home/j/.nvm"
+  check_mode: no
   register: nvm_install
 
 - name: Install nvm
