@@ -9,21 +9,12 @@
   register: oh_my_zsh_stat
 
 - name: Clone Oh-My-zsh
-  git:
-    repo: "https://github.com/robbyrussell/oh-my-zsh"
-    dest: "/home/j/.oh-my-zsh-inst"
-    version: master
-    update: no
+    # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
+  command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh'
   when: not oh_my_zsh_stat.stat.exists
   become: true
   become_user: j
   become_method: sudo
-
-- name: Install .oh-my-zsh
-  command: /home/j/.oh-my-zsh-inst/tools/install.sh
-  when: not oh_my_zsh_stat.stat.exists
-  become_user: j
-  become: true
 
 - name: Add autosuggestions
   git:
@@ -55,12 +46,6 @@
   command: mv ~/.zshrc ~/.zshrc.bak
   args:
     creates: "~/.zshrc.bak"
-  when: zshrc_stat.stat.exists
-  become_user: j
-  become: true
-
-- name: Remove .zshrc
-  command: rm ~/.zshrc
   when: zshrc_stat.stat.exists
   become_user: j
   become: true
