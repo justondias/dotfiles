@@ -20,7 +20,7 @@
 - name: Add autosuggestions
   git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions"
-    dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    dest: "/home/j/.oh-my-zsh/plugins/zsh-autosuggestions"
     version: master
     update: no
   become: true
@@ -30,7 +30,7 @@
 - name: Add zsh-syntax-highlighting
   git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    dest: "/home/j/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    dest: "/home/j/.oh-my-zsh/plugins/zsh-syntax-highlighting"
     version: master
     update: no
   become: true
