@@ -10,7 +10,7 @@
 
 - name: Clone Oh-My-zsh
     # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
-  command: 'git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh'
+  command: git clone -c core.autocrlf=input --depth=1 https://github.com/robbyrussell/oh-my-zsh.git /home/j/.oh-my-zsh
   when: not oh_my_zsh_stat.stat.exists
   become: true
   become_user: j
