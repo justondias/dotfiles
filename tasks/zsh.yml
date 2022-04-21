@@ -36,27 +36,27 @@
   become_user: j
   become_method: sudo
 
-#- name: Check for .zshrc
-  #stat: path="~/.zshrc"
-  #register: zshrc_stat
-  #become_user: j
-  #become: true
+- name: Check for .zshrc
+  stat: path="~/.zshrc"
+  register: zshrc_stat
+  become_user: j
+  become: true
 
-#- name: Back up .zshrc
-  #command: mv ~/.zshrc ~/.zshrc.bak
-  #args:
-    #creates: "~/.zshrc.bak"
-  #when: zshrc_stat.stat.exists
-  #become_user: j
-  #become: true
+- name: Back up .zshrc
+  command: mv ~/.zshrc ~/.zshrc.bak
+  args:
+    creates: "~/.zshrc.bak"
+  when: zshrc_stat.stat.exists
+  become_user: j
+  become: true
 
-#- name: Symlink .zshrc
-  #file:
-    #src: "~/.dotfiles/files/.zshrc"
-    #dest: "~/.zshrc"
-    #state: link
-  #become_user: j
-  #become: true
+- name: Symlink .zshrc
+  file:
+    src: "~/.dotfiles/files/.zshrc"
+    dest: "~/.zshrc"
+    state: link
+  become_user: j
+  become: true
 
 - name: Get zsh path
   command: which zsh
