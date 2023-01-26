@@ -178,10 +178,6 @@ call plug#begin('~/.vim/plugged')
 	" single/multi line code handler: gS - split one line into multiple, gJ - combine multiple lines into one
     Plug 'AndrewRadev/splitjoin.vim'
 
-	"prettier
-	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-	"command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
 	" ctrlp configued to use ripgrep
 	Plug 'ctrlpvim/ctrlp.vim'
 	if executable('rg')
@@ -189,7 +185,6 @@ call plug#begin('~/.vim/plugged')
 		let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 		let g:ctrlp_use_caching = 0
 	endif
-	noremap <leader>p :CtrlP $SRCTOP/<CR>
 
 	"Nerd commenter
 	Plug 'scrooloose/nerdcommenter'
@@ -248,6 +243,10 @@ call plug#begin('~/.vim/plugged')
 	\ 'coc-json',
 	\ ]
 
+	"prettier
+	command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+	noremap <leader>p :Prettier<CR>
+
 	" Use tab for trigger completion with characters ahead and navigate.
 	" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 	inoremap <silent><expr> <TAB>
@@ -257,8 +256,8 @@ call plug#begin('~/.vim/plugged')
 	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 	function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~# '\s'
 	endfunction
 
 	" Use <c-space> to trigger completion.
